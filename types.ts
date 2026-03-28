@@ -25,6 +25,13 @@ export interface SavingsJar {
   emoji: string;
 }
 
+export interface SavingsGoalSuggestion {
+  name: string;
+  targetAmount: number;
+  reasoning: string;
+  emoji: string;
+}
+
 export interface LearningModule {
   id: string;
   title: string;
@@ -57,4 +64,17 @@ export interface CashflowForecast {
         predictedExpense: number;
     }>;
     analysis: string;
+}
+
+export interface FinancialHealthScore {
+  score: number;
+  status: 'Poor' | 'Fair' | 'Good' | 'Excellent';
+  breakdown: {
+    incomeVsExpense: number;
+    savingsRate: number;
+    investmentDiversification: number;
+    emergencyFundStatus: number;
+  };
+  tips: string[];
+  aiAnalysis: string;
 }
